@@ -6,7 +6,8 @@ test.describe('Login Page', () => {
         const loginPage = new LoginPage(page);
         await loginPage.goto();
         await loginPage.login('practice', 'SuperSecretPassword!');
-        await expect(page).toHaveURL('https://practice.expandtesting.com/secure');
+        //Fix:Changed URL validation from /product to /secure
+        await expect(page).toHaveURL('https://practice.expandtesting.com/secure'); 
     });
     test('Login with invalid credentials', async ({ page }) => {
         const loginPage = new LoginPage(page);
