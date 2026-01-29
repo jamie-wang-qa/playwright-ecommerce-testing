@@ -1,6 +1,9 @@
 import{Page, Locator, expect} from '@playwright/test';
 
 export class LoginPage{
+    // Add base URL constant
+    private readonly BASE_URL = 'https://practice.expandtesting.com';
+    
     readonly page: Page;
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
@@ -17,7 +20,7 @@ export class LoginPage{
     }
 
     async goto(){
-        await this.page.goto('https://practice.expandtesting.com/login');
+        await this.page.goto(`${this.BASE_URL}/login`);
         
     }
 
