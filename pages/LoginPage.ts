@@ -20,7 +20,11 @@ export class LoginPage{
     }
 
     async goto(){
-        await this.page.goto(`${this.BASE_URL}/login`);
+        await this.page.goto(`${this.BASE_URL}/login`,
+            {waitUntil: 'domcontentloaded',
+                timeout: 60000
+            }
+        );
         
     }
 
